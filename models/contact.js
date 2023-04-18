@@ -22,7 +22,8 @@ const contactSchema = Schema({
     type: Schema.Types.ObjectId,
     ref: "user",
     required: true,
-  }
+}
+  
 });
 
 contactSchema.post("save", handleMongooseError);
