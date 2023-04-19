@@ -18,6 +18,12 @@ const contactSchema = Schema({
     type: Boolean,
     default: false,
   },
+  owner: {
+    type: Schema.Types.ObjectId,
+    ref: "user",
+    required: true,
+}
+  
 });
 
 contactSchema.post("save", handleMongooseError);
@@ -50,3 +56,5 @@ module.exports = {
   Contact,
   schemas,
 };
+
+
